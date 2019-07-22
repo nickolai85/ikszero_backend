@@ -15,6 +15,7 @@ class PassportController extends Controller
      */
     public function register(Request $request)
     {
+       // dd($request->all());
         $this->validate($request, [
             'name' => 'required|min:3',
             'email' => 'required|email|unique:users',
@@ -40,6 +41,7 @@ class PassportController extends Controller
      */
     public function login(Request $request)
     {
+
         $credentials = [
             'email' => $request->email,
             'password' => $request->password
